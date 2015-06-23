@@ -1,20 +1,10 @@
 $(document).ready(function (){
 
-var ul = $('body ul');
+var ul = $('ul');
+var maxNum = prompt("Enter a maximum number for the Fizz Buzz game");
 
-
-var max;
-
-$('input:text').on('keydown', function(event){
-	if(event.which == 13) {
-		// event.preventDefault();
-		max = $(this).val();
-	}
-}); //End on
-
-
-function fizzBuzz(max) {
-	for (var i = 1; i <= max; i++) {
+function fizzBuzz (max) {
+	for (var i = 1; i <= parseInt(max); i++) {
 		if(i % 3 == 0 && i % 5 == 0) {
 			ul.append("<li>fizzBuzz</li>");
 		} else if (i % 3 == 0 ) {
@@ -27,7 +17,21 @@ function fizzBuzz(max) {
 	} // End for statement
 } // End fizzBuzz function
 
-fizzBuzz();
+// var code = event.keyCode || event.which;
+
+// $('form').on('keydown', 'input:text', function(event){
+// 	if(event.code == 13) {
+// 		event.preventDefault();
+// 		maxNum = $(this).val();
+// 	}
+	
+// }); //End keydown
+
+fizzBuzz(maxNum);
+
+
+
+
 
 
 
