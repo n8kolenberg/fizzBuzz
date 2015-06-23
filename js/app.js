@@ -7,6 +7,10 @@ var maxNum = prompt("Enter a maximum number for the Fizz Buzz game");
 	maxNum = prompt('Please enter a number only');
 }
 
+while (maxNum % 1 !== 0) {
+	maxNum = prompt('Please enter a whole number only');
+}
+
 
 function fizzBuzz (max) {
 	for (var i = 1; i <= parseInt(max); i++) {
