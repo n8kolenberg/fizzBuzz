@@ -3,6 +3,11 @@ $(document).ready(function (){
 var ul = $('ul');
 var maxNum = prompt("Enter a maximum number for the Fizz Buzz game");
 
+ while (isNaN(maxNum)) {
+	maxNum = prompt('Please enter a number only');
+}
+
+
 function fizzBuzz (max) {
 	for (var i = 1; i <= parseInt(max); i++) {
 		if(i % 3 == 0 && i % 5 == 0) {
