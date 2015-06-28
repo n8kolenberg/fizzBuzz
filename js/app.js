@@ -22,19 +22,32 @@ var maxNum = 0;
 // }
 
 
+// function fizzBuzz (max) {
+// 	for (var i = 1; i <= parseInt(max); i++) {
+// 		if(i % 3 == 0 && i % 5 == 0) {
+// 			ul.append("<li>fizzBuzz</li>");
+// 		} else if (i % 3 == 0 ) {
+// 			ul.append("<li>fizz</li>");
+// 		} else if (i % 5 == 0) {
+// 			ul.append("<li>buzz</li>");
+// 		} else {
+// 			ul.append("<li>" + i + "</li>");
+// 		}
+// 	} // End for statement
+// } // End fizzBuzz function
+
 function fizzBuzz (max) {
-	for (var i = 1; i <= parseInt(max); i++) {
-		if(i % 3 == 0 && i % 5 == 0) {
-			ul.append("<li>fizzBuzz</li>");
-		} else if (i % 3 == 0 ) {
-			ul.append("<li>fizz</li>");
-		} else if (i % 5 == 0) {
-			ul.append("<li>buzz</li>");
-		} else {
-			ul.append("<li>" + i + "</li>");
-		}
-	} // End for statement
-} // End fizzBuzz function
+	function check(n){
+		var msg = '';
+		if ( n % 3 == 0 ) {msg += 'Fizz'};
+		if ( n % 5 == 0 ) {msg += 'Buzz'};
+		return msg || n;
+	}
+	for (var i = 1; i <= max; i++) {
+		ul.append("<li>" + check(i) + "</li>");
+	}
+}
+
 
 // var code = event.keyCode || event.which;
 
