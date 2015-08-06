@@ -15,7 +15,8 @@ var maxNum = 0;
 
 
 function fizzBuzzImproved (max) {
-	console.time('improvedVersion');
+	$ul.fadeOut( function () {
+		console.time('improvedVersion');
 	function check(n){
 		var msg = '';
 		if ( n % 3 == 0 ) {msg += 'Fizz'};
@@ -26,6 +27,8 @@ function fizzBuzzImproved (max) {
 		$ul.append("<li>" + check(i) + "</li>");
 	}
 	console.timeEnd('improvedVersion');
+}); //End callback function from fadeOut
+	
 }
 
 $('#myForm').on('keydown', 'input:text', function(event){
@@ -39,7 +42,6 @@ $('#myForm').on('keydown', 'input:text', function(event){
 			fizzBuzzImproved(maxNum);
 			$ul.fadeIn();
 		} //End second if statement to check for decimals and NaN
-		
 		
 	} else {
 		return;
