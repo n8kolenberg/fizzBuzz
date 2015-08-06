@@ -1,0 +1,64 @@
+$primary-color: rgba(50, 100, 149, 1);
+$primary-margin: 20px;
+$primary-padding: 20px;
+$width: 75%;
+$Helvetica: "Helvetica", sans-serif;
+
+body {
+	background-image: url('images/confectionary.png');
+	font-family: $Helvetica;
+}
+
+h3 {
+	font-size: 30px;
+	width: 100px;
+	margin: auto;
+	margin-bottom: $primary-margin;
+	margin-top: $primary-margin;
+
+	a {
+		text-decoration: none;
+		color: $primary-color;
+	}
+}
+
+#myForm {
+	width: 100%;
+	margin-top: $primary-margin;
+	margin: auto;
+	text-align: center;
+	margin-bottom: $primary-margin*2;
+
+	input {
+		width: $width;
+		padding: $primary-padding;
+		border-radius: 10px;
+		text-align: center;
+		font-size: $primary-margin * 1.2;
+		font-weight: bold;
+		outline: none;
+		border: 3px solid rgba(80, 57, 117, 0.5);
+		opacity: 0.7;
+		color: $primary-color;
+	}
+}
+
+
+ul {
+	width: $width;
+	min-height: 100px;
+	margin: auto;
+	border: 2px solid rgba(191, 183, 204, 0.5);
+	li {
+		display: inline-block;
+		margin: $primary-margin/2;
+		color: $primary-color;
+		font-size: $primary-margin;
+	}
+}
+
+
+
+.hide {
+	display: none;
+}

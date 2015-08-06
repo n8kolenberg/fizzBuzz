@@ -1,42 +1,21 @@
 $(function (){
 
+
+$('input[type="text"]').focus();
+
 $('#dialog').dialog({
 				autoOpen: false,
 				hide: 'explode',
 				modal: true,
-				position: [50, 100]
 			}); //End dialog
-$('input:text').focus();
-var ul = $('ul');
+
+
+var $ul = $('ul');
 var maxNum = 0; 
-// = prompt("Enter a maximum number for the Fizz Buzz game");
 
 
-
-//  while (isNaN(maxNum)) {
-// 	maxNum = prompt('Please enter a number only');
-// }
-
-// while (maxNum % 1 !== 0) {
-// 	maxNum = prompt('Please enter a whole number only');
-// }
-
-
-// function fizzBuzz (max) {
-// 	for (var i = 1; i <= parseInt(max); i++) {
-// 		if(i % 3 == 0 && i % 5 == 0) {
-// 			ul.append("<li>fizzBuzz</li>");
-// 		} else if (i % 3 == 0 ) {
-// 			ul.append("<li>fizz</li>");
-// 		} else if (i % 5 == 0) {
-// 			ul.append("<li>buzz</li>");
-// 		} else {
-// 			ul.append("<li>" + i + "</li>");
-// 		}
-// 	} // End for statement
-// } // End fizzBuzz function
-
-function fizzBuzz (max) {
+function fizzBuzzImproved (max) {
+	console.time('improvedVersion');
 	function check(n){
 		var msg = '';
 		if ( n % 3 == 0 ) {msg += 'Fizz'};
@@ -44,23 +23,21 @@ function fizzBuzz (max) {
 		return msg || n;
 	}
 	for (var i = 1; i <= max; i++) {
-		ul.append("<li>" + check(i) + "</li>");
+		$ul.append("<li>" + check(i) + "</li>");
 	}
+	console.timeEnd('improvedVersion');
 }
-
-
-// var code = event.keyCode || event.which;
 
 $('#myForm').on('keydown', 'input:text', function(event){
 	if(event.keyCode == 13) {
-		ul.html('');
+		$ul.html('');
 		maxNum = Number($(this).val());
 		event.preventDefault();
 		if(isNaN(maxNum) || maxNum % 1 !== 0) {
 			$('#dialog').dialog('open'); //End dialog
 		} else {
-			fizzBuzz(maxNum);
-			
+			fizzBuzzImproved(maxNum);
+			$ul.fadeIn();
 		} //End second if statement to check for decimals and NaN
 		
 		
@@ -69,18 +46,6 @@ $('#myForm').on('keydown', 'input:text', function(event){
 	} //End first if-else statement
 	
 }); //End keydown
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
