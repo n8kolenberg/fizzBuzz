@@ -1,12 +1,29 @@
 $(function (){
 
+function colorFizzBuzz() {
+	$('li').each(function(){
+		var $this = $(this);
+		switch($this.text()) {
+		case "Fizz" :
+		  $this.addClass('fizz');
+		  break;
+		case "Buzz" :
+		  $this.addClass('buzz');
+		  break;
+		case "FizzBuzz" :
+			$this.addClass('fizzbuzz');
+			break;    
+		}
+	}); // End each
+} // End colorFizzBuzz
+
+
 
 $('input[type="text"]').focus();
 
 $('#dialog').dialog({
 				autoOpen: false,
-				hide: 'explode',
-				modal: true,
+				modal: true
 			}); //End dialog
 
 
@@ -17,16 +34,17 @@ var maxNum = 0;
 function fizzBuzzImproved (max) {
 	$ul.fadeOut( function () {
 		console.time('improvedVersion');
-	function check(n){
-		var msg = '';
-		if ( n % 3 == 0 ) {msg += 'Fizz'};
-		if ( n % 5 == 0 ) {msg += 'Buzz'};
-		return msg || n;
-	}
-	for (var i = 1; i <= max; i++) {
-		$ul.append("<li>" + check(i) + "</li>");
-	}
-	console.timeEnd('improvedVersion');
+		function check(n){
+			var msg = '';
+			if ( n % 3 == 0 ) {msg += 'Fizz'};
+			if ( n % 5 == 0 ) {msg += 'Buzz'};
+			return msg || n;
+		}
+		for (var i = 1; i <= max; i++) {
+			$ul.append("<li>" + check(i) + "</li>");
+		}
+		colorFizzBuzz();
+		console.timeEnd('improvedVersion');
 }); //End callback function from fadeOut
 	
 }
@@ -48,6 +66,8 @@ $('#myForm').on('keydown', 'input:text', function(event){
 	} //End first if-else statement
 	
 }); //End keydown
+
+
 
 
 

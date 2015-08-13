@@ -3,6 +3,8 @@ $primary-margin: 20px;
 $primary-padding: 20px;
 $width: 75%;
 $Helvetica: "Helvetica", sans-serif;
+$logo-color: rgba(217, 30, 24, 1);
+$mix-logo-color: mix($logo-color, rgba(102, 51, 153, 1));
 
 body {
 	background-image: url('images/confectionary.png');
@@ -10,15 +12,21 @@ body {
 }
 
 h3 {
-	font-size: 30px;
-	width: 100px;
+	width: 700px;
 	margin: auto;
-	margin-bottom: $primary-margin;
-	margin-top: $primary-margin;
+	margin-top: $primary-margin * 4;
+	text-align: center;
 
 	a {
 		text-decoration: none;
 		color: $primary-color;
+	}
+
+	span {
+		letter-spacing: 1;
+		display: inline;
+		font-family: "Bangers", cursive;
+		font-size: 140px;
 	}
 }
 
@@ -34,8 +42,9 @@ h3 {
 		padding: $primary-padding;
 		border-radius: 10px;
 		text-align: center;
+		font-family: "Luckiest Guy", cursive;
 		font-size: $primary-margin * 1.2;
-		font-weight: bold;
+		letter-spacing: 2;
 		outline: none;
 		border: 3px solid rgba(80, 57, 117, 0.5);
 		opacity: 0.7;
@@ -53,11 +62,48 @@ ul {
 		display: inline-block;
 		margin: $primary-margin/2;
 		color: $primary-color;
-		font-size: $primary-margin;
+		font-family: "Luckiest Guy", cursive;
+		font-size: $primary-margin * 2;
 	}
 }
 
 
+.fizz {
+	color: $logo-color;
+}
+
+.buzz {
+	color: complement($logo-color);
+}
+
+.fizzbuzz {
+	color: complement(rgba(102, 51, 153, 1));
+}
+
+
+#f {
+	@extend.fizz;
+}
+
+#b {
+	@extend.buzz;
+}
+
+#i {
+	color: rgba(102, 51, 153, 1);
+}
+
+#u {
+	@extend.fizzbuzz;
+}
+
+#zz {
+	color: $mix-logo-color;
+}
+
+#secondzz {
+	color: lighten($mix-logo-color, 30%);
+}
 
 .hide {
 	display: none;

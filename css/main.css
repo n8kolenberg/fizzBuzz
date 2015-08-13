@@ -3,14 +3,18 @@ body {
   font-family: "Helvetica", sans-serif; }
 
 h3 {
-  font-size: 30px;
-  width: 100px;
+  width: 700px;
   margin: auto;
-  margin-bottom: 20px;
-  margin-top: 20px; }
+  margin-top: 80px;
+  text-align: center; }
   h3 a {
     text-decoration: none;
     color: #326495; }
+  h3 span {
+    letter-spacing: 1;
+    display: inline;
+    font-family: "Bangers", cursive;
+    font-size: 140px; }
 
 #myForm {
   width: 100%;
@@ -23,8 +27,9 @@ h3 {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    font-family: "Luckiest Guy", cursive;
     font-size: 24px;
-    font-weight: bold;
+    letter-spacing: 2;
     outline: none;
     border: 3px solid rgba(80, 57, 117, 0.5);
     opacity: 0.7;
@@ -39,7 +44,26 @@ ul {
     display: inline-block;
     margin: 10px;
     color: #326495;
-    font-size: 20px; }
+    font-family: "Luckiest Guy", cursive;
+    font-size: 40px; }
+
+.fizz, #f {
+  color: #d91e18; }
+
+.buzz, #b {
+  color: #18d3d9; }
+
+.fizzbuzz, #u {
+  color: #669933; }
+
+#i {
+  color: rebeccapurple; }
+
+#zz {
+  color: #a02959; }
+
+#secondzz {
+  color: #df83a8; }
 
 .hide {
   display: none; }
